@@ -1,10 +1,10 @@
 function displayWeather(response) {
-  console.log(response);
   let currentTemp = document.querySelector("#current-temperature");
   currentTemp.innerHTML = `${Math.round(response.data.main.temp)}˚C`;
 
   let minTemp = document.querySelector("#min-temp");
   minTemp.innerHTML = `Min: ${Math.round(response.data.main.temp_min)}˚C`;
+
   let maxTemp = document.querySelector("#max-temp");
   maxTemp.innerHTML = `Max: ${Math.round(response.data.main.temp_max)}˚C`;
 
@@ -18,16 +18,16 @@ function displayWeather(response) {
   humidityInput.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 }
 
-function search(event) {
+function weatherSearch(event) {
   event.preventDefault();
   let apiKey = "f40bd075138412008e91923e9e9f4ad7";
   let city = document.querySelector("#city-input").value;
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(displayWeather);
 }
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
 
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", weatherSearch);
 let now = new Date();
 
 let days = [
@@ -38,9 +38,23 @@ let days = [
   "Thursday",
   "Friday",
   "Saturday",
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
 ];
 let day = document.querySelector("#day");
-day.innerHTML = `${days[now.getDay()]}`;
+day.innerHTML = days[now.getDay()];
+document.querySelector("#day-one").innerHTML = days[now.getDay() + 1];
+document.querySelector("#day-two").innerHTML = days[now.getDay() + 2];
+document.querySelector("#day-three").innerHTML = days[now.getDay() + 3];
+document.querySelector("#day-four").innerHTML = days[now.getDay() + 4];
+document.querySelector("#day-five").innerHTML = days[now.getDay() + 5];
+document.querySelector("#day-six").innerHTML = days[now.getDay() + 6];
+document.querySelector("#day-seven").innerHTML = days[now.getDay() + 7];
 
 let months = [
   "Jan",
