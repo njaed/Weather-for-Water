@@ -26,7 +26,19 @@ function displayWeather(response) {
   function displayForecast(response) {
     console.log(response);
     let day1 = document.querySelector("#day-1");
-    day1.innerHTML = `yay`;
+    day1.innerHTML = `${Math.round(response.data.daily[1].temp.day)}˚C`;
+    let day2 = document.querySelector("#day-2");
+    day2.innerHTML = `${Math.round(response.data.daily[2].temp.day)}˚C`;
+    let day3 = document.querySelector("#day-3");
+    day3.innerHTML = `${Math.round(response.data.daily[3].temp.day)}˚C`;
+    let day4 = document.querySelector("#day-4");
+    day4.innerHTML = `${Math.round(response.data.daily[4].temp.day)}˚C`;
+    let day5 = document.querySelector("#day-5");
+    day5.innerHTML = `${Math.round(response.data.daily[5].temp.day)}˚C`;
+    let day6 = document.querySelector("#day-6");
+    day6.innerHTML = `${Math.round(response.data.daily[6].temp.day)}˚C`;
+    let day7 = document.querySelector("#day-7");
+    day7.innerHTML = `${Math.round(response.data.daily[7].temp.day)}˚C`;
   }
   function forecastSearch(event) {
     let apiKey = "f40bd075138412008e91923e9e9f4ad7";
