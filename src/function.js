@@ -18,11 +18,22 @@ function displayWeather(response) {
   let humidityInput = document.querySelector("#humidity-input");
   humidityInput.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
-  let latitude = response.data.coord.lat;
-  let longitude = response.data.coord.lon;
+  let lat = response.data.coord.lat;
+  let lon = response.data.coord.lon;
 
-  console.log(latitude);
-  console.log(longitude);
+  console.log(lat);
+  console.log(lon);
+  function displayForecast(response) {
+    console.log(response);
+    let day1 = document.querySelector("#day-1");
+    day1.innerHTML = `yay`;
+  }
+  function forecastSearch(event) {
+    let apiKey = "f40bd075138412008e91923e9e9f4ad7";
+    let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiURL).then(displayForecast);
+  }
+  forecastSearch(response);
 }
 function weatherSearch(event) {
   event.preventDefault();
