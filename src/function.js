@@ -10,7 +10,7 @@ function displayWeather(response) {
   maxTemp.innerHTML = `Max: ${Math.round(response.data.main.temp_max)}˚C`;
 
   let cityName = document.querySelector("#city");
-  cityName.innerHTML = `${response.data.name},`;
+  cityName.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
   let windInput = document.querySelector("#wind-input");
   windInput.innerHTML = `Wind: ${response.data.wind.speed} m/s`;
@@ -21,8 +21,6 @@ function displayWeather(response) {
   let lat = response.data.coord.lat;
   let lon = response.data.coord.lon;
 
-  console.log(lat);
-  console.log(lon);
   function displayForecast(response) {
     console.log(response);
     let day1 = document.querySelector("#day-1");
