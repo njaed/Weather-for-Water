@@ -1,4 +1,5 @@
 function displayWeather(response) {
+  console.log(response);
   let currentTemp = document.querySelector("#current-temperature");
   currentTemp.innerHTML = `${Math.round(response.data.main.temp)}˚C`;
 
@@ -16,8 +17,13 @@ function displayWeather(response) {
 
   let humidityInput = document.querySelector("#humidity-input");
   humidityInput.innerHTML = `Humidity: ${response.data.main.humidity}%`;
-}
 
+  let latitude = response.data.coord.lat;
+  let longitude = response.data.coord.lon;
+
+  console.log(latitude);
+  console.log(longitude);
+}
 function weatherSearch(event) {
   event.preventDefault();
   let apiKey = "f40bd075138412008e91923e9e9f4ad7";
