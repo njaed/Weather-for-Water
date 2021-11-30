@@ -1,3 +1,4 @@
+let now = new Date();
 function displayWeather(response) {
   console.log(response);
   let currentTemp = document.querySelector("#current-temperature");
@@ -37,6 +38,12 @@ function displayWeather(response) {
     day6.innerHTML = `${Math.round(response.data.daily[6].temp.day)}˚C`;
     let day7 = document.querySelector("#day-7");
     day7.innerHTML = `${Math.round(response.data.daily[7].temp.day)}˚C`;
+
+    let precipitationInput = document.querySelector("#precipitation-input");
+    console.log(now.getMinutes());
+    precipitationInput.innerHTML = `Precipitation: ${
+      response.data.minutely[now.getMinutes()].precipitation
+    }mm`;
   }
   function forecastSearch(event) {
     let apiKey = "f40bd075138412008e91923e9e9f4ad7";
@@ -55,7 +62,6 @@ function weatherSearch(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", weatherSearch);
-let now = new Date();
 
 let days = [
   "Sunday",
