@@ -1,4 +1,5 @@
 let now = new Date();
+
 function displayWeather(response) {
   console.log(response);
   let currentTemp = document.querySelector("#current-temperature");
@@ -22,6 +23,14 @@ function displayWeather(response) {
   let lat = response.data.coord.lat;
   let lon = response.data.coord.lon;
 
+  function farenheihtConversion(event) {
+    event.preventDefault();
+    let fTemp = Math.round((Math.round(response.data.main.temp) * 9) / 5 + 32);
+    alert(fTemp);
+  }
+  let fButton = document.querySelector("#f-button");
+  fButton.addEventListener("click", farenheihtConversion);
+
   function displayForecast(response) {
     console.log(response);
     let day1 = document.querySelector("#day-1");
@@ -40,7 +49,6 @@ function displayWeather(response) {
     day7.innerHTML = `${Math.round(response.data.daily[7].temp.day)}˚C`;
 
     let precipitationInput = document.querySelector("#precipitation-input");
-    console.log(now.getMinutes());
     precipitationInput.innerHTML = `Precipitation: ${
       response.data.minutely[now.getMinutes()].precipitation
     }mm`;
