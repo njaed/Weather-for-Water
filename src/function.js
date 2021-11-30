@@ -26,10 +26,19 @@ function displayWeather(response) {
   function farenheihtConversion(event) {
     event.preventDefault();
     let fTemp = Math.round((Math.round(response.data.main.temp) * 9) / 5 + 32);
-    alert(fTemp);
+    let currentTemp = document.querySelector("#current-temperature");
+    currentTemp.innerHTML = `${fTemp}˚F`;
   }
   let fButton = document.querySelector("#f-button");
   fButton.addEventListener("click", farenheihtConversion);
+
+  function celciusConversion() {
+    let cTemp = Math.round(response.data.main.temp);
+    let currentTemp = document.querySelector("#current-temperature");
+    currentTemp.innerHTML = `${cTemp}˚C`;
+  }
+  let cButton = document.querySelector("#c-button");
+  cButton.addEventListener("click", celciusConversion);
 
   function displayForecast(response) {
     console.log(response);
