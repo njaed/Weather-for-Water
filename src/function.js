@@ -15,7 +15,7 @@ function displayWeather(response) {
   cityName.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
   let windInput = document.querySelector("#wind-input");
-  windInput.innerHTML = `Wind: ${response.data.wind.speed} m/s`;
+  windInput.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
 
   let humidityInput = document.querySelector("#humidity-input");
   humidityInput.innerHTML = `Humidity: ${response.data.main.humidity}%`;
@@ -23,19 +23,48 @@ function displayWeather(response) {
   let lat = response.data.coord.lat;
   let lon = response.data.coord.lon;
 
-  function farenheihtConversion(event) {
-    event.preventDefault();
-    let fTemp = Math.round((Math.round(response.data.main.temp) * 9) / 5 + 32);
+  function farenheihtConversion() {
     let currentTemp = document.querySelector("#current-temperature");
-    currentTemp.innerHTML = `${fTemp}˚F`;
+    currentTemp.innerHTML = `${Math.round(
+      (response.data.main.temp * 9) / 5 + 32
+    )}˚F`;
+
+    let minTemp = document.querySelector("#min-temp");
+    minTemp.innerHTML = `Min: ${Math.round(
+      (response.data.main.temp_min * 9) / 5 + 32
+    )}˚F`;
+
+    let maxTemp = document.querySelector("#max-temp");
+    maxTemp.innerHTML = `Max: ${Math.round(
+      (response.data.main.temp_max * 9) / 5 + 32
+    )}˚F`;
+
+    let windInput = document.querySelector("#wind-input");
+    windInput.innerHTML = `Wind: ${Math.round(
+      response.data.wind.speed / 2.237
+    )} mph`;
   }
   let fButton = document.querySelector("#f-button");
   fButton.addEventListener("click", farenheihtConversion);
 
   function celciusConversion() {
-    let cTemp = Math.round(response.data.main.temp);
     let currentTemp = document.querySelector("#current-temperature");
-    currentTemp.innerHTML = `${cTemp}˚C`;
+    currentTemp.innerHTML = `${Math.round(response.data.main.temp)}˚C`;
+
+    let minTemp = document.querySelector("#min-temp");
+    minTemp.innerHTML = `Min: ${Math.round(response.data.main.temp_min)}˚C`;
+
+    let maxTemp = document.querySelector("#max-temp");
+    maxTemp.innerHTML = `Max: ${Math.round(response.data.main.temp_max)}˚C`;
+
+    let cityName = document.querySelector("#city");
+    cityName.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
+
+    let windInput = document.querySelector("#wind-input");
+    windInput.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
+
+    let humidityInput = document.querySelector("#humidity-input");
+    humidityInput.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   }
   let cButton = document.querySelector("#c-button");
   cButton.addEventListener("click", celciusConversion);
@@ -43,24 +72,136 @@ function displayWeather(response) {
   function displayForecast(response) {
     console.log(response);
     let day1 = document.querySelector("#day-1");
-    day1.innerHTML = `${Math.round(response.data.daily[1].temp.day)}˚C`;
+    day1.innerHTML = `Max: ${Math.round(
+      response.data.daily[1].temp.max
+    )}˚C 　Min: ${Math.round(response.data.daily[1].temp.min)}˚C`;
+
     let day2 = document.querySelector("#day-2");
-    day2.innerHTML = `${Math.round(response.data.daily[2].temp.day)}˚C`;
+    day2.innerHTML = `Max: ${Math.round(
+      response.data.daily[2].temp.max
+    )}˚C　 Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
+
     let day3 = document.querySelector("#day-3");
-    day3.innerHTML = `${Math.round(response.data.daily[3].temp.day)}˚C`;
+    day3.innerHTML = `Max: ${Math.round(
+      response.data.daily[3].temp.max
+    )}˚C　 Min: ${Math.round(response.data.daily[3].temp.min)}˚C`;
+
     let day4 = document.querySelector("#day-4");
-    day4.innerHTML = `${Math.round(response.data.daily[4].temp.day)}˚C`;
+    day4.innerHTML = `Max: ${Math.round(
+      response.data.daily[4].temp.max
+    )}˚C　 Min: ${Math.round(response.data.daily[4].temp.min)}˚C`;
+
     let day5 = document.querySelector("#day-5");
-    day5.innerHTML = `${Math.round(response.data.daily[5].temp.day)}˚C`;
+    day5.innerHTML = `Max: ${Math.round(
+      response.data.daily[5].temp.max
+    )}˚C　 Min: ${Math.round(response.data.daily[5].temp.min)}˚C`;
+
     let day6 = document.querySelector("#day-6");
-    day6.innerHTML = `${Math.round(response.data.daily[6].temp.day)}˚C`;
+    day6.innerHTML = `Max: ${Math.round(
+      response.data.daily[6].temp.max
+    )}˚C　 Min: ${Math.round(response.data.daily[6].temp.min)}˚C`;
+
     let day7 = document.querySelector("#day-7");
-    day7.innerHTML = `${Math.round(response.data.daily[7].temp.day)}˚C`;
+    day7.innerHTML = `Max: ${Math.round(
+      response.data.daily[7].temp.max
+    )}˚C　 Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
+
+    function farenheihtConversionForecast() {
+      let day1 = document.querySelector("#day-1");
+      day1.innerHTML = `Max: ${Math.round(
+        (response.data.daily[1].temp.max * 9) / 5 + 32
+      )}˚F 　Min: ${Math.round(
+        (response.data.daily[1].temp.min * 9) / 5 + 32
+      )}˚F`;
+
+      let day2 = document.querySelector("#day-2");
+      day2.innerHTML = `Max: ${Math.round(
+        (response.data.daily[2].temp.max * 9) / 5 + 32
+      )}˚F　 Min: ${Math.round(
+        (response.data.daily[2].temp.min * 9) / 5 + 32
+      )}˚F`;
+
+      let day3 = document.querySelector("#day-3");
+      day3.innerHTML = `Max: ${Math.round(
+        (response.data.daily[3].temp.max * 9) / 5 + 32
+      )}˚F　 Min: ${Math.round(
+        (response.data.daily[3].temp.min * 9) / 5 + 32
+      )}˚F`;
+
+      let day4 = document.querySelector("#day-4");
+      day4.innerHTML = `Max: ${Math.round(
+        (response.data.daily[4].temp.max * 9) / 5 + 32
+      )}˚F　 Min: ${Math.round(
+        (response.data.daily[4].temp.min * 9) / 5 + 32
+      )}˚F`;
+
+      let day5 = document.querySelector("#day-5");
+      day5.innerHTML = `Max: ${Math.round(
+        (response.data.daily[5].temp.max * 9) / 5 + 32
+      )}˚F　 Min: ${Math.round(
+        (response.data.daily[5].temp.min * 9) / 5 + 32
+      )}˚F`;
+
+      let day6 = document.querySelector("#day-6");
+      day6.innerHTML = `Max: ${Math.round(
+        (response.data.daily[6].temp.max * 9) / 5 + 32
+      )}˚F　 Min: ${Math.round(
+        (response.data.daily[6].temp.min * 9) / 5 + 32
+      )}˚F`;
+
+      let day7 = document.querySelector("#day-7");
+      day7.innerHTML = `Max: ${Math.round(
+        (response.data.daily[7].temp.max * 9) / 5 + 32
+      )}˚F　 Min: ${Math.round(
+        (response.data.daily[7].temp.min * 9) / 5 + 32
+      )}˚F`;
+    }
+    let fButton = document.querySelector("#f-button");
+    fButton.addEventListener("click", farenheihtConversionForecast);
+
+    function celciusConversionForecast() {
+      let day1 = document.querySelector("#day-1");
+      day1.innerHTML = `Max: ${Math.round(
+        response.data.daily[1].temp.max
+      )}˚C 　Min: ${Math.round(response.data.daily[1].temp.min)}˚C`;
+
+      let day2 = document.querySelector("#day-2");
+      day2.innerHTML = `Max: ${Math.round(
+        response.data.daily[2].temp.max
+      )}˚C　 Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
+
+      let day3 = document.querySelector("#day-3");
+      day3.innerHTML = `Max: ${Math.round(
+        response.data.daily[3].temp.max
+      )}˚C　 Min: ${Math.round(response.data.daily[3].temp.min)}˚C`;
+
+      let day4 = document.querySelector("#day-4");
+      day4.innerHTML = `Max: ${Math.round(
+        response.data.daily[4].temp.max
+      )}˚C　 Min: ${Math.round(response.data.daily[4].temp.min)}˚C`;
+
+      let day5 = document.querySelector("#day-5");
+      day5.innerHTML = `Max: ${Math.round(
+        response.data.daily[5].temp.max
+      )}˚C　 Min: ${Math.round(response.data.daily[5].temp.min)}˚C`;
+
+      let day6 = document.querySelector("#day-6");
+      day6.innerHTML = `Max: ${Math.round(
+        response.data.daily[6].temp.max
+      )}˚C　 Min: ${Math.round(response.data.daily[6].temp.min)}˚C`;
+
+      let day7 = document.querySelector("#day-7");
+      day7.innerHTML = `Max: ${Math.round(
+        response.data.daily[7].temp.max
+      )}˚C　 Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
+    }
+    let cButton = document.querySelector("#c-button");
+    cButton.addEventListener("click", celciusConversionForecast);
 
     let precipitationInput = document.querySelector("#precipitation-input");
-    precipitationInput.innerHTML = `Precipitation: ${
+    precipitationInput.innerHTML = `Precipitation: ${Math.round(
       response.data.minutely[now.getMinutes()].precipitation
-    }mm`;
+    )} mm/hr`;
   }
   function forecastSearch(event) {
     let apiKey = "f40bd075138412008e91923e9e9f4ad7";
