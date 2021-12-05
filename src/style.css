@@ -82,6 +82,7 @@ p {
   background: white;
   color: black;
   margin: 15px;
+  border-width: 1px;
 }
 
 #f-button:hover,
@@ -94,15 +95,7 @@ footer {
   text-align: center;
   font-size: small;
 }
-#day-one,
-#day-two,
-#day-three,
-#day-four,
-#day-five,
-#day-six,
-#day-seven {
-  font-weight: bold;
-}
+
 .day1,
 .day2,
 .day3,
@@ -113,10 +106,30 @@ footer {
   padding: 5px;
   margin: 5px;
 }
+#day-1-max,
+#day-2-max,
+#day-3-max,
+#day-4-max,
+#day-5-max,
+#day-6-max,
+#day-7-max,
+#day-1-min,
+#day-2-min,
+#day-3-min,
+#day-4-min,
+#day-5-min,
+#day-6-min,
+#day-7-min {
+  font-weight: lighter;
+}
+
 #city-input {
   border-color: black;
   padding: 12px;
   border-radius: 25px;
+}
+#city-input:focus {
+  outline: none;
 }
 #submit-button {
   border-radius: 50%;
@@ -125,8 +138,13 @@ footer {
   border-color: black;
 }
 
-#submit-button:hover {
+#submit-button:hover,
+#city-input:hover {
   transition: all 0.2s ease-in-out;
   background: black;
   color: white;
+}
+[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
 }
