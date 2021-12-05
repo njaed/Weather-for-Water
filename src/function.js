@@ -71,88 +71,102 @@ function displayWeather(response) {
 
   function displayForecast(response) {
     console.log(response);
-    let day1 = document.querySelector("#day-1");
-    day1.innerHTML = `Max: ${Math.round(
-      response.data.daily[1].temp.max
-    )}˚C 　Min: ${Math.round(response.data.daily[1].temp.min)}˚C`;
+    let day1Max = document.querySelector("#day-1-max");
+    day1Max.innerHTML = `Max: ${Math.round(response.data.daily[1].temp.max)}˚C`;
+    let day1Min = document.querySelector("#day-1-min");
+    day1Min.innerHTML = `Min: ${Math.round(response.data.daily[1].temp.min)}˚C`;
 
-    let day2 = document.querySelector("#day-2");
-    day2.innerHTML = `Max: ${Math.round(
-      response.data.daily[2].temp.max
-    )}˚C　 Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
+    let day2Max = document.querySelector("#day-2-max");
+    day2Max.innerHTML = `Max: ${Math.round(response.data.daily[2].temp.max)}˚C`;
+    let day2Min = document.querySelector("#day-2-min");
+    day2Min.innerHTML = `Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
 
-    let day3 = document.querySelector("#day-3");
-    day3.innerHTML = `Max: ${Math.round(
-      response.data.daily[3].temp.max
-    )}˚C　 Min: ${Math.round(response.data.daily[3].temp.min)}˚C`;
+    let day3Max = document.querySelector("#day-3-max");
+    day3Max.innerHTML = `Max: ${Math.round(response.data.daily[3].temp.max)}˚C`;
+    let day3Min = document.querySelector("#day-3-min");
+    day3Min.innerHTML = `Min: ${Math.round(response.data.daily[3].temp.min)}˚C`;
 
-    let day4 = document.querySelector("#day-4");
-    day4.innerHTML = `Max: ${Math.round(
-      response.data.daily[4].temp.max
-    )}˚C　 Min: ${Math.round(response.data.daily[4].temp.min)}˚C`;
+    let day4Max = document.querySelector("#day-4-max");
+    day4Max.innerHTML = `Max: ${Math.round(response.data.daily[4].temp.max)}˚C`;
+    let day4Min = document.querySelector("#day-4-min");
+    day4Min.innerHTML = `Min: ${Math.round(response.data.daily[4].temp.min)}˚C`;
 
-    let day5 = document.querySelector("#day-5");
-    day5.innerHTML = `Max: ${Math.round(
-      response.data.daily[5].temp.max
-    )}˚C　 Min: ${Math.round(response.data.daily[5].temp.min)}˚C`;
+    let day5Max = document.querySelector("#day-5-max");
+    day5Max.innerHTML = `Max: ${Math.round(response.data.daily[5].temp.max)}˚C`;
+    let day5Min = document.querySelector("#day-5-min");
+    day5Min.innerHTML = `Min: ${Math.round(response.data.daily[5].temp.min)}˚C`;
 
-    let day6 = document.querySelector("#day-6");
-    day6.innerHTML = `Max: ${Math.round(
-      response.data.daily[6].temp.max
-    )}˚C　 Min: ${Math.round(response.data.daily[6].temp.min)}˚C`;
+    let day6Max = document.querySelector("#day-6-max");
+    day6Max.innerHTML = `Max: ${Math.round(response.data.daily[6].temp.max)}˚C`;
+    let day6Min = document.querySelector("#day-6-min");
+    day6Min.innerHTML = `Min: ${Math.round(response.data.daily[6].temp.min)}˚C`;
 
-    let day7 = document.querySelector("#day-7");
-    day7.innerHTML = `Max: ${Math.round(
-      response.data.daily[7].temp.max
-    )}˚C　 Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
+    let day7Max = document.querySelector("#day-7-max");
+    day7Max.innerHTML = `Max: ${Math.round(response.data.daily[7].temp.max)}˚C`;
+    let day7Min = document.querySelector("#day-7-min");
+    day7Min.innerHTML = `Min: ${Math.round(response.data.daily[7].temp.min)}˚C`;
 
     function farenheihtConversionForecast() {
-      let day1 = document.querySelector("#day-1");
-      day1.innerHTML = `Max: ${Math.round(
+      let day1Max = document.querySelector("#day-1-max");
+      day1Max.innerHTML = `Max: ${Math.round(
         (response.data.daily[1].temp.max * 9) / 5 + 32
-      )}˚F 　Min: ${Math.round(
+      )}˚F`;
+      let day1Min = document.querySelector("#day-1-min");
+      day1Min.innerHTML = `Min: ${Math.round(
         (response.data.daily[1].temp.min * 9) / 5 + 32
       )}˚F`;
 
-      let day2 = document.querySelector("#day-2");
-      day2.innerHTML = `Max: ${Math.round(
+      let day2Max = document.querySelector("#day-2-max");
+      day2Max.innerHTML = `Max: ${Math.round(
         (response.data.daily[2].temp.max * 9) / 5 + 32
-      )}˚F　 Min: ${Math.round(
+      )}˚F`;
+      let day2Min = document.querySelector("#day-2-min");
+      day2Min.innerHTML = `Min: ${Math.round(
         (response.data.daily[2].temp.min * 9) / 5 + 32
       )}˚F`;
 
-      let day3 = document.querySelector("#day-3");
-      day3.innerHTML = `Max: ${Math.round(
+      let day3Max = document.querySelector("#day-3-max");
+      day3Max.innerHTML = `Max: ${Math.round(
         (response.data.daily[3].temp.max * 9) / 5 + 32
-      )}˚F　 Min: ${Math.round(
+      )}˚F`;
+      let day3Min = document.querySelector("#day-3-min");
+      day3Min.innerHTML = `Min: ${Math.round(
         (response.data.daily[3].temp.min * 9) / 5 + 32
       )}˚F`;
 
-      let day4 = document.querySelector("#day-4");
-      day4.innerHTML = `Max: ${Math.round(
+      let day4Max = document.querySelector("#day-4-max");
+      day4Max.innerHTML = `Max: ${Math.round(
         (response.data.daily[4].temp.max * 9) / 5 + 32
-      )}˚F　 Min: ${Math.round(
+      )}˚F`;
+      let day4Min = document.querySelector("#day-4-min");
+      day4Min.innerHTML = `Min: ${Math.round(
         (response.data.daily[4].temp.min * 9) / 5 + 32
       )}˚F`;
 
-      let day5 = document.querySelector("#day-5");
-      day5.innerHTML = `Max: ${Math.round(
+      let day5Max = document.querySelector("#day-5-max");
+      day5Max.innerHTML = `Max: ${Math.round(
         (response.data.daily[5].temp.max * 9) / 5 + 32
-      )}˚F　 Min: ${Math.round(
+      )}˚F`;
+      let day5Min = document.querySelector("#day-5-min");
+      day5Min.innerHTML = `Min: ${Math.round(
         (response.data.daily[5].temp.min * 9) / 5 + 32
       )}˚F`;
 
-      let day6 = document.querySelector("#day-6");
-      day6.innerHTML = `Max: ${Math.round(
+      let day6Max = document.querySelector("#day-6-max");
+      day6Max.innerHTML = `Max: ${Math.round(
         (response.data.daily[6].temp.max * 9) / 5 + 32
-      )}˚F　 Min: ${Math.round(
+      )}˚F`;
+      let day6Min = document.querySelector("#day-6-min");
+      day6Min.innerHTML = `Min: ${Math.round(
         (response.data.daily[6].temp.min * 9) / 5 + 32
       )}˚F`;
 
-      let day7 = document.querySelector("#day-7");
-      day7.innerHTML = `Max: ${Math.round(
+      let day7Max = document.querySelector("#day-7-max");
+      day7Max.innerHTML = `Max: ${Math.round(
         (response.data.daily[7].temp.max * 9) / 5 + 32
-      )}˚F　 Min: ${Math.round(
+      )}˚F`;
+      let day7Min = document.querySelector("#day-7-min");
+      day7Min.innerHTML = `Min: ${Math.round(
         (response.data.daily[7].temp.min * 9) / 5 + 32
       )}˚F`;
     }
@@ -160,40 +174,68 @@ function displayWeather(response) {
     fButton.addEventListener("click", farenheihtConversionForecast);
 
     function celciusConversionForecast() {
-      let day1 = document.querySelector("#day-1");
-      day1.innerHTML = `Max: ${Math.round(
+      let day1Max = document.querySelector("#day-1-max");
+      day1Max.innerHTML = `Max: ${Math.round(
         response.data.daily[1].temp.max
-      )}˚C 　Min: ${Math.round(response.data.daily[1].temp.min)}˚C`;
+      )}˚C`;
+      let day1Min = document.querySelector("#day-1-min");
+      day1Min.innerHTML = `Min: ${Math.round(
+        response.data.daily[1].temp.min
+      )}˚C`;
 
-      let day2 = document.querySelector("#day-2");
-      day2.innerHTML = `Max: ${Math.round(
+      let day2Max = document.querySelector("#day-2-max");
+      day2Max.innerHTML = `Max: ${Math.round(
         response.data.daily[2].temp.max
-      )}˚C　 Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
+      )}˚C`;
+      let day2Min = document.querySelector("#day-2-min");
+      day2Min.innerHTML = `Min: ${Math.round(
+        response.data.daily[2].temp.min
+      )}˚C`;
 
-      let day3 = document.querySelector("#day-3");
-      day3.innerHTML = `Max: ${Math.round(
+      let day3Max = document.querySelector("#day-3-max");
+      day3Max.innerHTML = `Max: ${Math.round(
         response.data.daily[3].temp.max
-      )}˚C　 Min: ${Math.round(response.data.daily[3].temp.min)}˚C`;
+      )}˚C`;
+      let day3Min = document.querySelector("#day-3-min");
+      day3Min.innerHTML = `Min: ${Math.round(
+        response.data.daily[3].temp.min
+      )}˚C`;
 
-      let day4 = document.querySelector("#day-4");
-      day4.innerHTML = `Max: ${Math.round(
+      let day4Max = document.querySelector("#day-4-max");
+      day4Max.innerHTML = `Max: ${Math.round(
         response.data.daily[4].temp.max
-      )}˚C　 Min: ${Math.round(response.data.daily[4].temp.min)}˚C`;
+      )}˚C`;
+      let day4Min = document.querySelector("#day-4-min");
+      day4Min.innerHTML = `Min: ${Math.round(
+        response.data.daily[4].temp.min
+      )}˚C`;
 
-      let day5 = document.querySelector("#day-5");
-      day5.innerHTML = `Max: ${Math.round(
+      let day5Max = document.querySelector("#day-5-max");
+      day5Max.innerHTML = `Max: ${Math.round(
         response.data.daily[5].temp.max
-      )}˚C　 Min: ${Math.round(response.data.daily[5].temp.min)}˚C`;
+      )}˚C`;
+      let day5Min = document.querySelector("#day-5-min");
+      day5Min.innerHTML = `Min: ${Math.round(
+        response.data.daily[5].temp.min
+      )}˚C`;
 
-      let day6 = document.querySelector("#day-6");
-      day6.innerHTML = `Max: ${Math.round(
+      let day6Max = document.querySelector("#day-6-max");
+      day6Max.innerHTML = `Max: ${Math.round(
         response.data.daily[6].temp.max
-      )}˚C　 Min: ${Math.round(response.data.daily[6].temp.min)}˚C`;
+      )}˚C`;
+      let day6Min = document.querySelector("#day-6-min");
+      day6Min.innerHTML = `Min: ${Math.round(
+        response.data.daily[6].temp.min
+      )}˚C`;
 
-      let day7 = document.querySelector("#day-7");
-      day7.innerHTML = `Max: ${Math.round(
+      let day7Max = document.querySelector("#day-7-max");
+      day7Max.innerHTML = `Max: ${Math.round(
         response.data.daily[7].temp.max
-      )}˚C　 Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
+      )}˚C`;
+      let day7Min = document.querySelector("#day-7-min");
+      day7Min.innerHTML = `Min: ${Math.round(
+        response.data.daily[7].temp.min
+      )}˚C`;
     }
     let cButton = document.querySelector("#c-button");
     cButton.addEventListener("click", celciusConversionForecast);

@@ -50,50 +50,62 @@
       <div class="row">
         <div class="col-4"></div>
         <div class="col-2">
-          <div class="row" id="day-one"></div>
-          <div class="row" id="day-two"></div>
-          <div class="row" id="day-three"></div>
-          <div class="row" id="day-four"></div>
-          <div class="row" id="day-five"></div>
-          <div class="row" id="day-six"></div>
-          <div class="row" id="day-seven"></div>
+          <div class="row day1" id="day-one"></div>
+          <div class="row day2" id="day-two"></div>
+          <div class="row day3" id="day-three"></div>
+          <div class="row day4" id="day-four"></div>
+          <div class="row day5" id="day-five"></div>
+          <div class="row day6" id="day-six"></div>
+          <div class="row day7" id="day-seven"></div>
+        </div>
+        <div class="col-1">
+          <div class="row day1" id="day-1-max">Max: ˚C</div>
+          <div class="row day2" id="day-2-max">Max: ˚C</div>
+          <div class="row day3" id="day-3-max">Max: ˚C</div>
+          <div class="row day4" id="day-4-max">Max: ˚C</div>
+          <div class="row day5" id="day-5-max">Max: ˚C</div>
+          <div class="row day6" id="day-6-max">Max: ˚C</div>
+          <div class="row day7" id="day-7-max">Max: ˚C</div>
         </div>
         <div class="col-2">
-          <div class="row" id="day-1"></div>
-          <div class="row" id="day-2"></div>
-          <div class="row" id="day-3"></div>
-          <div class="row" id="day-4"></div>
-          <div class="row" id="day-5"></div>
-          <div class="row" id="day-6"></div>
-          <div class="row" id="day-7"></div>
+          <div class="row day1" id="day-1-min">Min: ˚C</div>
+          <div class="row day2" id="day-2-min">Min: ˚C</div>
+          <div class="row day3" id="day-3-min">Min: ˚C</div>
+          <div class="row day4" id="day-4-min">Min: ˚C</div>
+          <div class="row day5" id="day-5-min">Min: ˚C</div>
+          <div class="row day6" id="day-6-min">Min: ˚C</div>
+          <div class="row day7" id="day-7-min">Min: ˚C</div>
         </div>
-        <div class="col-1"></div>
-        <div class="col-1">
-          <div class="row">
+        <div class="col-1" id="icons">
+          <div class="row day1" id="icon-one">
             <div class="col-2"><i class="fas fa-cloud"></i></div>
           </div>
-          <div class="row">
+          <div class="row day2" id="icon-two">
             <div class="col-2"><i class="fas fa-cloud"></i></div>
           </div>
-          <div class="row">
+          <div class="row day3" id="icon-three">
             <div class="col-2"><i class="fas fa-cloud"></i></div>
           </div>
-          <div class="row">
+          <div class="row day4" id="icon-four">
             <div class="col-2"><i class="fas fa-cloud"></i></div>
           </div>
-          <div class="row">
+          <div class="row day5" id="icon-five">
             <div class="col-2"><i class="fas fa-cloud"></i></div>
           </div>
-          <div class="row">
+          <div class="row day6" id="icon-six">
             <div class="col-2"><i class="fas fa-cloud"></i></div>
           </div>
-          <div class="row">
+          <div class="row day7" id="icon-seven">
             <div class="col-2"><i class="fas fa-cloud"></i></div>
           </div>
         </div>
       </div>
     </div>
 
+    <br />
+    <br />
+    <br />
+    <br />
     <br />
     <br />
     <br />
@@ -113,7 +125,7 @@
         autofocus="on"
         autocomplete="off"
       />
-      <input type="submit" value="Search" />
+      <input type="submit" value="Search" id="submit-button" />
     </form>
     <div class="container buttons">
       <button class="temp-button" id="f-button">˚F</button>
