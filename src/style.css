@@ -5,9 +5,9 @@
   top: 10px;
 }
 #main-icon {
-  font-size: 80px;
+  width: 200px;
   position: relative;
-  top: -45px;
+  top: -75px;
 }
 #current-temperature {
   font-size: 100px;
@@ -147,4 +147,15 @@ footer {
 [type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   appearance: none;
+}
+#icon-one,
+#icon-two,
+#icon-three,
+#icon-four,
+#icon-five,
+#icon-six,
+#icon-seven {
+  width: 45px;
+  margin: 0px;
+  padding: 0px;
 }

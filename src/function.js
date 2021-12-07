@@ -20,6 +20,12 @@ function displayWeather(response) {
   let humidityInput = document.querySelector("#humidity-input");
   humidityInput.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
+  let mainIcon = document.querySelector("#main-icon");
+  mainIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   let lat = response.data.coord.lat;
   let lon = response.data.coord.lon;
 
@@ -76,35 +82,77 @@ function displayWeather(response) {
     let day1Min = document.querySelector("#day-1-min");
     day1Min.innerHTML = `Min: ${Math.round(response.data.daily[1].temp.min)}˚C`;
 
+    let icon1 = document.querySelector("#icon-one");
+    icon1.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.daily[1].weather[0].icon}@2x.png`
+    );
+
     let day2Max = document.querySelector("#day-2-max");
     day2Max.innerHTML = `Max: ${Math.round(response.data.daily[2].temp.max)}˚C`;
     let day2Min = document.querySelector("#day-2-min");
     day2Min.innerHTML = `Min: ${Math.round(response.data.daily[2].temp.min)}˚C`;
+
+    let icon2 = document.querySelector("#icon-two");
+    icon2.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.daily[2].weather[0].icon}@2x.png`
+    );
 
     let day3Max = document.querySelector("#day-3-max");
     day3Max.innerHTML = `Max: ${Math.round(response.data.daily[3].temp.max)}˚C`;
     let day3Min = document.querySelector("#day-3-min");
     day3Min.innerHTML = `Min: ${Math.round(response.data.daily[3].temp.min)}˚C`;
 
+    let icon3 = document.querySelector("#icon-three");
+    icon3.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.daily[3].weather[0].icon}@2x.png`
+    );
+
     let day4Max = document.querySelector("#day-4-max");
     day4Max.innerHTML = `Max: ${Math.round(response.data.daily[4].temp.max)}˚C`;
     let day4Min = document.querySelector("#day-4-min");
     day4Min.innerHTML = `Min: ${Math.round(response.data.daily[4].temp.min)}˚C`;
+
+    let icon4 = document.querySelector("#icon-four");
+    icon4.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.daily[4].weather[0].icon}@2x.png`
+    );
 
     let day5Max = document.querySelector("#day-5-max");
     day5Max.innerHTML = `Max: ${Math.round(response.data.daily[5].temp.max)}˚C`;
     let day5Min = document.querySelector("#day-5-min");
     day5Min.innerHTML = `Min: ${Math.round(response.data.daily[5].temp.min)}˚C`;
 
+    let icon5 = document.querySelector("#icon-five");
+    icon5.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.daily[5].weather[0].icon}@2x.png`
+    );
+
     let day6Max = document.querySelector("#day-6-max");
     day6Max.innerHTML = `Max: ${Math.round(response.data.daily[6].temp.max)}˚C`;
     let day6Min = document.querySelector("#day-6-min");
     day6Min.innerHTML = `Min: ${Math.round(response.data.daily[6].temp.min)}˚C`;
 
+    let icon6 = document.querySelector("#icon-six");
+    icon6.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.daily[6].weather[0].icon}@2x.png`
+    );
+
     let day7Max = document.querySelector("#day-7-max");
     day7Max.innerHTML = `Max: ${Math.round(response.data.daily[7].temp.max)}˚C`;
     let day7Min = document.querySelector("#day-7-min");
     day7Min.innerHTML = `Min: ${Math.round(response.data.daily[7].temp.min)}˚C`;
+
+    let icon7 = document.querySelector("#icon-seven");
+    icon7.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.daily[7].weather[0].icon}@2x.png`
+    );
 
     function farenheihtConversionForecast() {
       let day1Max = document.querySelector("#day-1-max");
