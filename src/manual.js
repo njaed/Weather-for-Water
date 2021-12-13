@@ -293,7 +293,7 @@ function displayWeather(response) {
       response.data.minutely[now.getMinutes()].precipitation
     )} mm/hr`;
   }
-  function forecastSearch(event) {
+  function forecastSearch() {
     let apiKey = "f40bd075138412008e91923e9e9f4ad7";
     let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(apiURL).then(displayForecast);

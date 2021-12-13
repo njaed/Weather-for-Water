@@ -94,6 +94,8 @@ p {
 footer {
   text-align: center;
   font-size: small;
+  opacity: 0.7;
+  font-family: monospace;
 }
 
 .day1,
