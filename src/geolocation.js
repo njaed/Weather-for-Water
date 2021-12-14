@@ -300,11 +300,12 @@ function showTemperature(response) {
 }
 
 function showYourself(position) {
+  navigator.geolocation.getCurrentPosition(showYourself);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = `f40bd075138412008e91923e9e9f4ad7`;
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(showTemperature);
 }
-
-navigator.geolocation.getCurrentPosition(showYourself);
+let geoButton = document.querySelector("#geo-button");
+geoButton.addEventListener("click", showYourself);
