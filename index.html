@@ -14,10 +14,15 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+  <style>
+    body {
+      background: #f9f3df;
+    }
+  </style>
   <body>
     <div class="current">
       <img
-        src="http://openweathermap.org/img/wn/10d@2x.png"
+        src="http://openweathermap.org/img/wn/01d@2x.png"
         alt="Main Icon"
         id="main-icon"
       />
@@ -85,7 +90,7 @@
             <div class="col-2">
               <img
                 id="icon-one"
-                src="http://openweathermap.org/img/wn/10d@2x.png"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
                 alt="Rain"
               />
             </div>
@@ -94,7 +99,7 @@
             <div class="col-2">
               <img
                 id="icon-two"
-                src="http://openweathermap.org/img/wn/10d@2x.png"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
                 alt="Rain"
               />
             </div>
@@ -103,7 +108,7 @@
             <div class="col-2">
               <img
                 id="icon-three"
-                src="http://openweathermap.org/img/wn/10d@2x.png"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
                 alt="Rain"
               />
             </div>
@@ -112,7 +117,7 @@
             <div class="col-2">
               <img
                 id="icon-four"
-                src="http://openweathermap.org/img/wn/10d@2x.png"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
                 alt="Rain"
               />
             </div>
@@ -121,7 +126,7 @@
             <div class="col-2">
               <img
                 id="icon-five"
-                src="http://openweathermap.org/img/wn/10d@2x.png"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
                 alt="Rain"
               />
             </div>
@@ -130,7 +135,7 @@
             <div class="col-2">
               <img
                 id="icon-six"
-                src="http://openweathermap.org/img/wn/10d@2x.png"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
                 alt="Rain"
               />
             </div>
@@ -139,7 +144,7 @@
             <div class="col-2">
               <img
                 id="icon-seven"
-                src="http://openweathermap.org/img/wn/10d@2x.png"
+                src="http://openweathermap.org/img/wn/01d@2x.png"
                 alt="Rain"
               />
             </div>
@@ -172,7 +177,7 @@
         autocomplete="off"
       />
       <input type="submit" value="Search" id="submit-button" />
-      <button id="geo-button">Current Position</button>
+      <button id="geo-button"><i class="fas fa-search-location"></i></button>
     </form>
     <div class="container buttons">
       <button class="temp-button" id="f-button">˚F</button>
@@ -182,6 +187,7 @@
     <br />
     <br />
     <br />
+    <div class="ocean"></div>
     <footer>
       <a href="https://github.com/njaed/Weather-for-Water" target="_blank"
         >Open Sourced Website</a

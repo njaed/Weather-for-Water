@@ -356,3 +356,5 @@ month.innerHTML = `${months[now.getMonth()]}`;
 
 let date = document.querySelector("#date");
 date.innerHTML = `${now.getDate()}`;
+
+``;
