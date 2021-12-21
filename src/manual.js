@@ -1,5 +1,4 @@
 let now = new Date();
-
 function displayWeather(response) {
   console.log(response);
   let currentTemp = document.querySelector("#current-temperature");
@@ -356,5 +355,3 @@ month.innerHTML = `${months[now.getMonth()]}`;
 
 let date = document.querySelector("#date");
 date.innerHTML = `${now.getDate()}`;
-
-``;

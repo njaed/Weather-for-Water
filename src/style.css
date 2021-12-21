@@ -63,11 +63,6 @@ p {
   text-align: center;
 }
 
-.time {
-  margin-left: 90%;
-  font-size: 30px;
-}
-
 .buttons {
   position: relative;
   display: inline;
@@ -77,9 +72,8 @@ p {
   box-shadow: none;
 }
 
-#f-button,
-#c-button {
-  border-radius: 45px;
+#f-button {
+  border-radius: 25px;
   font-size: 20px;
   padding: 10px 15px;
   background: #f4d19b;
@@ -87,7 +81,15 @@ p {
   margin: 15px;
   border-width: 0px;
 }
-
+#c-button {
+  border-radius: 25px;
+  font-size: 20px;
+  padding: 10px 14px;
+  background: #f4d19b;
+  color: white;
+  margin: 15px;
+  border-width: 0px;
+}
 #f-button:hover,
 #c-button:hover {
   transition: all 0.2s ease-in-out;
@@ -142,6 +144,7 @@ footer {
   background: #f4d19b;
   font-size: 12px;
   border-width: 0px;
+  color: white;
 }
 #geo-button {
   position: relative;
@@ -179,4 +182,5 @@ footer {
   width: 45px;
   margin: 0px;
   padding: 0px;
+  text-shadow: 5px 5px 6px rgba(78, 80, 82, 0.6);
 }
